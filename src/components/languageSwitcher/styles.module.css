@@ -6,7 +6,9 @@
   margin: 0 auto;
   gap: 18px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  background: linear-gradient(to right, #a1d2e8, #f6c2c3);
+  background: linear-gradient(to right, #001f3f, #2a5470);
+  color: #fff;
   padding: 20px;
-  max-width: 350px;
+  max-width: 450px;
+  border-radius: 8px;
 }
