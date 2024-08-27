@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useEffect, useState } from "react";
+import { LanguageContext } from "./context/LanguageContext";
+import LanguageSwitcher from "./components/languageSwitcher";
+import { languages } from "./utils/languageData";
 
 function App() {
+  const [currentLanguage, setCurrentLanguage] = useState();
+  function changeLanguage(language) {
+    setCurrentLanguage(language);
+  }
+  useEffect(() => {
+    setCurrentLanguage(currentLanguage);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LanguageContext.Provider
+      value={{ changeLanguage, languages, currentLanguage }}
+    >
+      <LanguageSwitcher />
+    </LanguageContext.Provider>
   );
 }
 
